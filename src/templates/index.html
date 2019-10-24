@@ -1,0 +1,54 @@
+{% macro jpg(name, alt='Image') %}
+<img
+  src="images/{{ name }}-1800.jpg"
+  srcset="images/{{ name }}-400.jpg 400w, images/{{ name }}-800.jpg 800w, images/{{ name }}-1200.jpg 1200w, images/{{ name }}-1800.jpg 1800w"
+  alt="{{ alt }}"
+/>
+{% endmacro %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta charset="utf-8">
+        <title>{{META.telium.page_name}}</title>
+        {% if env == 'production' %}
+        <link href="css/main-app.css" rel="stylesheet">
+        {% endif %}
+        <script src="https://use.fontawesome.com/26b586778e.js"></script>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
+
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,900&display=swap" rel="stylesheet">
+        <link href="https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/css/rawline.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://www.politico.com/interactives/cdn/fonts/battletoads/icons/politico-battletoads-icons.min.css">
+        <!-- jQuery -->
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+          integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+          crossorigin="anonymous">
+        </script>
+    </head>
+
+    <body>
+
+      <article class="container">
+        <h1>Judging the Judges</h1>
+        <!-- {%include "partials/_buttons.html"%}
+
+        {%include "partials/_judge.html"%} -->
+        <!-- {%include "partials/_mapbox.html"%} -->
+      </article>
+    </body>
+</html>
+
+
+{% block js %}
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="//d3js.org/topojson.v1.min.js"></script>
+<script type="text/javascript" src="js/main-app.bundle.js"></script>
+
+{% endblock %}
