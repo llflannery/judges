@@ -1,0 +1,31 @@
+
+
+
+<!-- <div class="judge">
+  <div class="summary">
+    <div class="headshot">
+      <img src="https://res.cloudinary.com/stephens-media/image/upload/c_scale,w_200/v1572299322/Judge_Richard_Scotti.jpg">
+    </div>
+    <div class="name">Debbie Smith</div>
+    <div class="mainstats">
+      <div class="scoreAll">
+        <div class="header">Overall score:</div>
+        <div class="score overall red">2.2</div>
+      </div>
+      <div class="hash">|</div>
+      <div class="ratingAll">
+        <div class="header">Recommend Retention:</div>
+        <div class="rating overall red">30%</div>
+      </div>
+    </div>
+    <div >The Clark County School District will launch an anonymous ethics reporting system for its more than 40,000 employees in January, allowing staff to document misconduct they see while on the job.</div>
+  </div>
+</div> -->
+
+<ul>
+  {% for item in myData %}
+  <li>{{ item.name }}</li>
+{% else %}
+  <li>This would display if the 'item' collection were empty</li>
+{% endfor %}
+</ul>

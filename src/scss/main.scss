@@ -1,106 +1,159 @@
-@import 'https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/css/rawline.css';
-
-#mapid { height: 400px; }
-
-.sortAZ {
-  display: inline-block;
-  background-color: #f79393;
-  color: white;
-  padding: 7px;
-  margin: 1em 0;
-  font-weight: 900;
-  border-radius: 5px;
-
-  &.float {
-    background-color: #E16A6A;
-    float: right;
-    margin-left: 1em;
-  }
-}
-
-.search { display: inline-block; margin: 1em 1em 1em 0;
-
-input { font-size: 1.3em; }
-}
-
 .container {
-  max-width: 1000px;
-  margin: auto;
-  font-family: 'Raleway', sans-serif;
-  -webkit-font-feature-settings: "lnum";
-  -moz-font-feature-settings: "lnum";
-  font-feature-settings: "lnum";
-
+max-width: 1200px;
+margin: auto;
+font-family: 'Raleway',sans-serif;
 }
 
 .judge {
-  margin: 0.5em 0;
-}
+  border-bottom: 10px solid black;
+  margin: 3em auto;
 
-.summary { border-bottom: 2px solid #E16A6A; position: relative; }
+  .first {
+    max-width: 120px;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 10px;
 
-.dropdown { background-color: #ddd; height: 300px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; }
+    img { width: 100%; }
+  }
 
-.headshot {
-  width: 70px;
-  display: inline-block;
-  vertical-align: middle;
-  padding: 0.7em;
+  .second {
+    height: 180px;
+    position: relative;
+    display: inline-block;
+    width: calc((100% - 135px)/2);
 
-  img { width: 100%; border-radius: 50%; }
-}
+    .court {
+      font-weight: 900;
+      text-transform: uppercase;
+    }
 
-.header { display: none; }
+    .name {
+      font-weight: 900;
+      font-size: 2em;
+      text-transform: uppercase;
+      padding: 0.4em 0;
+    }
+    .retnum {
+      padding: 0.5em 0;
+      position: absolute;
+      bottom: 0;
+      font-style: italic;
+    }
+  }
 
-.name {
-  font-family: 'rawline', sans-serif;
-  font-size: 2em;
-  font-weight: 900;
-  font-style: normal;
-  display: inline-block;
-  vertical-align: middle;
-}
+  .third {
+    display: inline-block;
+    width: calc((100% - 144px)/2);
+    font-weight: 900;
 
-.mainstats {
-  font-family: 'rawline', sans-serif;
-  display: block;
-  vertical-align: middle;
-  text-align: right;
-  position: absolute;
-  right: 1em;
-  top: 50%;
-  transform: translateY(-50%);}
+    text-align: right;
 
-.overall, .hash {
-  font-size: 2.5em;
-  font-weight: 900;
-  font-style: normal;
-  color: green;
+    .rating, .retention  {
+      display: inline-block;
+      text-align: center;
+      padding: 0 15px;
 
-  &.red {
-    color: #E16A6A;
+      .tease { font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; }
+      .tease2 { font-size: 0.9em; font-weight: normal; font-style: italic; }
+
+      .num {
+        font-size: 3em;
+        &.red { color: red; }
+        &.green { color: green; }
+      }
+    }
+
+
+    .rating {
+      border-right: 1px solid #ccc;
+    }
+  }
+
+  .name {
+    font-weight: 900;
+    font-size: 2em;
   }
 }
 
-.hash { width: 50px; display: inline-block; color: #bbb; }
+.summarybox {
+  .survey {
+    color: white;
+    background-color: black;
+    font-weight: 900;
+    padding: 0.5em;
+  }
 
-.scoreAll, .ratingAll { width: 110px; display: inline-block; }
+  .summQuestion {
+    border-bottom: 1px solid black;
+    margin: 0.5em 0;
+    padding-bottom: 5px;
 
+    .summ {
+      color: white;
+      background-color: black;
+      font-weight: bold;
+      display: inline-block;
+      padding: 3px 5px;
+    }
 
+    .question {
+      display: inline-block;
+      margin-left: 5px;
+    }
+  }
 
-.state {
-  fill: #ccc;
+  .summQuestion:last-child {
+    border: none;
+  }
+
 }
-.state-boundary {
-  fill: none;
-  stroke: #fff;
-}
-.state.staten {
-  fill: orange;
-  stroke: #000;
+
+
+.summaryToggle {
+  text-align: center;
+  background-color: red;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: white;
+  padding: 4px;
+  clear: both;
+
+  .minimize { display: none; }
 }
 
-.state.bronx {
-  fill: purple;
-  stroke: #000;
+.prevSurvey {
+  text-transform: uppercase;
+  font-weight: 900;
+  padding: 1em 0;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  margin-bottom: 5px;
+
+  .label {
+    background-color: #333333;
+    color: white;
+    display: inline-block;
+    padding: 0.2em 0.4em;
+    margin-right: 10px;
+  }
+
+  .ret {
+    display: inline-block;
+
+    .num {
+      vertical-align: middle;
+      font-size: 2em;
+      margin-right: 7px;
+      &.green { color: green; }
+      &.red { color: red; }
+    }
+
+   .tease3 {
+     color: black;
+     vertical-align: middle;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+   }
+  }
 }

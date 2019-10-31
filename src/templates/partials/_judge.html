@@ -1,47 +1,134 @@
-<div class="judge">
-  <div class="summary">
-    <div class="headshot">
-      <img src="https://res.cloudinary.com/stephens-media/image/upload/c_crop,w_150,h_150,x_100,y_0/v1569958110/judge.jpg">
-    </div>
-    <div class="name">Susan McJudge</div>
-    <div class="mainstats">
-      <div class="scoreAll">
-        <div class="header">Overall score:</div>
-        <div class="score overall">3.7</div>
-      </div>
-      <div class="hash">|</div>
-      <div class="ratingAll">
-        <div class="header">Recommend Retention:</div>
-        <div class="rating overall">60%</div>
-      </div>
-    </div>
-    <div >The Clark County School District will launch an anonymous ethics reporting system for its more than 40,000 employees in January, allowing staff to document misconduct they see while on the job.</div>
+<div class="judges">
 
+{% for item in DATA %}
+  <div class="judge">
+   <div class="topsummary">
+
+     <div class="first">
+       <img src="https://res.cloudinary.com/stephens-media/image/upload/v1572477570/JUDGING/{{ item.Headshot }}.jpg"/>
+     </div>
+
+     <div class="second">
+       <div class="court">{{ item.Court }}</div>
+       <div class="name">{{ item.jid }}</div>
+       <div class="bio">{{ item.bio }}</div>
+       <div class="retnum">{{ item.retobs }} retention responses for this judge</div>
+     </div>
+
+     <div class="third">
+       <div class="rating">
+         <div class="num">{{ item.ss }}</div>
+         <div class="tease">Rating</div>
+         <div class="tease2">(5-point scale)</div>
+       </div>
+       <div class="retention">
+         {% if item.ret >= 50 %}
+         <div class="num green">{{ item.ret }} %</div>
+         {% else %}
+         <div class="num red">{{ item.ret }} %</div>
+         {% endif %}
+         <div class="tease">Retention</div>
+         <div class="tease">Recommendation</div>
+       </div>
+     </div>
+
+   </div>
+
+   <div class="summaryToggle"><div class="expand">Expand</div><div class="minimize">Minimize</div></div>
+   <div class="summarybox">
+    <div class="survey">2019 Survey Questions</div>
+    <div class="quesA summQuestion">
+      <div class="quesA summ">{{ item.a }}</div>
+      <div class='question'>The judge was <b>familiar</b> with the case record and documents.</div>
+    </div>
+
+    <div class="quesB summQuestion">
+      <div class="quesB summ">{{ item.b }}</div>
+      <div class='question'>It was evident that the judge <b>weighed all evidence</b> and arguments fairly before rendering a decision.</div>
+    </div>
+
+    <div class="quesC summQuestion">
+      <div class="quesC summ">{{ item.c }}</div>
+      <div class='question'>The judge <b>accurately</b> applied the law, the rules of procedure, and/or the rules of evidence.</div>
+    </div>
+
+    <div class="quesD summQuestion">
+      <div class="quesD summ">{{ item.d }}</div>
+      <div class='question'>The judge’s explanation of the basis for their decision was <b>clear.</b></div>
+    </div>
+
+    <div class="quesE summQuestion">
+      <div class="quesE summ">{{ item.e }}</div>
+      <div class='question'>The judge's behavior was free from the <b>appearance of impropriety.</b></div>
+    </div>
+
+    <div class="quesF summQuestion">
+      <div class="quesF summ">{{ item.f }}</div>
+      <div class='question'>The judge's conduct in the matter was free from bias on the basis of the <b>race or ethnicity</b> of the parties involved.</div>
+    </div>
+
+    <div class="quesG summQuestion">
+      <div class="quesG summ">{{ item.g }}</div>
+      <div class='question'>The judge's conduct in the matter was free from bias on the basis of the <b>gender</b> of the parties involved.</div>
+    </div>
+
+    <div class="quesH summQuestion">
+      <div class="quesH summ">{{ item.h }}</div>
+      <div class='question'>The judge's conduct in the matter was free from bias on the basis of the <b>religion</b> of the parties involved.</div>
+    </div>
+
+    <div class="quesI summQuestion">
+      <div class="quesI summ">{{ item.i }}</div>
+      <div class='question'>The judge's conduct in the matter was free from bias on the basis of the <b>particular parties</b> or attorneys involved.</div>
+    </div>
+
+    <div class="quesJ summQuestion">
+      <div class="quesJ summ">{{ item.j }}</div>
+      <div class='question'>The judge consistently demonstrated <b>courtesy and respect</b>.</div>
+    </div>
+
+
+    {% if item.k %}
+    <div class="quesK summQuestion">
+      <div class="quesK summ">{{ item.k }}</div>
+      <div class='question'>The judge seemed <b>attentive</b> to the matter at hand.</div>
+    </div>
+    {% else %}
+    {% endif %}
+
+    {% if item.l %}
+    <div class="quesL summQuestion">
+      <div class="quesL summ">{{ item.l }}</div>
+      <div class='question'>The judge was successful at keeping court business <b>moving appropriately</b>.</div>
+    </div>
+    {% else %}
+    {% endif %}
+
+    {% if item.m %}
+    <div class="quesm summQuestion">
+      <div class="quesm summ">{{ item.m }}</div>
+      <div class='question'>The judge’s behavior was <b>consistent</b>.</div>
+    </div>
+    {% else %}
+    {% endif %}
+
+    {% if item.2013ret %}
+    <div class="prevSurvey">
+      <div class="label">2013 survey</div>
+      {% if item.2013ret >= 50 %}
+      <div class="ret"><span class="num green">{{ item.2013ret }} %</span><span class="tease3">Retention Recommendation</div></div>
+      {% else %}
+      <div class="ret"><span class="num red">{{ item.2013ret }} %</span><span class="tease3">Retention Recommendation</span></div>
+      {% endif %}
+    </div>
+    {% else %}
+    {% endif %}
+
+
+
+
+   </div>
   </div>
+{% endfor %}
 
-  <div class="dropdown">
-    <div>This is my dropdown</div>
-  </div>
-</div>
-
-
-<div class="judge">
-  <div class="summary">
-    <div class="headshot">
-      <img src="https://res.cloudinary.com/stephens-media/image/upload/c_crop,w_150,h_150,x_100,y_0/v1569958110/judge.jpg">
-    </div>
-    <div class="name">Debbie Smith</div>
-    <div class="mainstats">
-      <div class="scoreAll">
-        <div class="header">Overall score:</div>
-        <div class="score overall red">2.2</div>
-      </div>
-      <div class="hash">|</div>
-      <div class="ratingAll">
-        <div class="header">Recommend Retention:</div>
-        <div class="rating overall red">30%</div>
-      </div>
-    </div>
-    <div >The Clark County School District will launch an anonymous ethics reporting system for its more than 40,000 employees in January, allowing staff to document misconduct they see while on the job.</div>
-  </div>
 </div>

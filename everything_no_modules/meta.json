@@ -1,0 +1,43 @@
+{
+  "id": "2520157919",
+  "publishPath": "interactives/2019/judging/",
+  "stagingUrl": "https://s3.amazonaws.com/staging.interactives.politico.com/interactives/2019/judging/index.html",
+  "url": "https://www.politico.com/interactives/2019/judging/",
+  "timestamp": "2018-04-10T08:13-0400",
+  "dateline": "04/10/18 08:13 PM EDT",
+  "header": {
+    "headline": "This is your headline in the metadata file",
+    "subhed": "Subhed lives in the metadata.",
+    "byline": "Polly Politico in metadata",
+    "byline_link": "https://www.politico.com/"
+  },
+  "share": {
+    "fbook": {
+      "card_title": "judging",
+      "card_description": "The latest news from POLITICO.",
+      "author": "politico"
+    },
+    "twitter": {
+      "card_title": "judging",
+      "share_tweet": "The latest news from POLITICO.",
+      "card_description": "The latest news from POLITICO.",
+      "author": "@politico"
+    },
+    "image": {
+      "url": "https://www.politico.com/interactives/2019/judging/images/share.jpg",
+      "alt": "<Text>",
+      "type": "image/jpeg",
+      "width": "600",
+      "height": "300"
+    },
+    "keywords": "POLITICO, News, Washington D.C."
+  },
+  "telium": {
+    "free_paid_content": "free",
+    "site_section": "white house",
+    "ad_unit_section": "whitehouse",
+    "content_author": "Polly Politico|Peter Politico",
+    "content_byline": "By Polly Politico and Peter Politico",
+    "page_name": "judging — POLITICO"
+  }
+}

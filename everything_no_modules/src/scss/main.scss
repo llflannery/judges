@@ -1,0 +1,106 @@
+@import 'https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/css/rawline.css';
+
+#mapid { height: 400px; }
+
+.sortAZ {
+  display: inline-block;
+  background-color: #f79393;
+  color: white;
+  padding: 7px;
+  margin: 1em 0;
+  font-weight: 900;
+  border-radius: 5px;
+
+  &.float {
+    background-color: #E16A6A;
+    float: right;
+    margin-left: 1em;
+  }
+}
+
+.search { display: inline-block; margin: 1em 1em 1em 0;
+
+input { font-size: 1.3em; }
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  font-family: 'Raleway', sans-serif;
+  -webkit-font-feature-settings: "lnum";
+  -moz-font-feature-settings: "lnum";
+  font-feature-settings: "lnum";
+
+}
+
+.judge {
+  margin: 0.5em 0;
+}
+
+.summary { border-bottom: 2px solid #E16A6A; position: relative; }
+
+.dropdown { background-color: #ddd; height: 300px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; }
+
+.headshot {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0.7em;
+  max-width: 150px;
+
+  img { width: 100%; }
+}
+
+.header { display: none; }
+
+.name {
+  font-family: 'rawline', sans-serif;
+  font-size: 2em;
+  font-weight: 900;
+  font-style: normal;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.mainstats {
+  font-family: 'rawline', sans-serif;
+  display: block;
+  vertical-align: middle;
+  text-align: right;
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  transform: translateY(-50%);}
+
+.overall, .hash {
+  font-size: 2.5em;
+  font-weight: 900;
+  font-style: normal;
+  color: green;
+
+  &.red {
+    color: #E16A6A;
+  }
+}
+
+.hash { width: 50px; display: inline-block; color: #bbb; }
+
+.scoreAll, .ratingAll { width: 110px; display: inline-block; }
+
+
+
+.state {
+  fill: #ccc;
+}
+.state-boundary {
+  fill: none;
+  stroke: #fff;
+}
+.state.staten {
+  fill: orange;
+  stroke: #000;
+}
+
+.state.bronx {
+  fill: purple;
+  stroke: #000;
+}
