@@ -17,6 +17,7 @@ font-family: 'Raleway',sans-serif;
     img { width: 100%; }
   }
 
+
   .second {
     height: 180px;
     position: relative;
@@ -77,6 +78,8 @@ font-family: 'Raleway',sans-serif;
 }
 
 .summarybox {
+  clear: both;
+  display: none;
   .survey {
     color: white;
     background-color: black;
@@ -95,6 +98,10 @@ font-family: 'Raleway',sans-serif;
       font-weight: bold;
       display: inline-block;
       padding: 3px 5px;
+
+      i { cursor: pointer; }
+      i:hover { color: red; }
+      i:active { color: red; }
     }
 
     .question {
@@ -109,15 +116,47 @@ font-family: 'Raleway',sans-serif;
 
 }
 
+.stats {
+  background-color: #ddd;
+  display: none;
+
+  .statsNum {
+    display: inline-block;
+    padding: 1em;
+    text-align: center;
+
+    .category {
+      font-weight: bold;
+      display: block;
+    }
+  }
+
+  .statsHeader {
+    margin-left: 1em;
+    padding-top: 0.5em;
+    font-weight: 900;
+  }
+
+  .sampleSize {
+    float: right;
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+    font-style: italic;
+  }
+
+
+}
+
 
 .summaryToggle {
   text-align: center;
-  background-color: red;
+  background-color: #333333;
   text-transform: uppercase;
   font-weight: 900;
   color: white;
   padding: 4px;
   clear: both;
+  margin-bottom: 1em;
 
   .minimize { display: none; }
 }
@@ -157,3 +196,59 @@ font-family: 'Raleway',sans-serif;
    }
   }
 }
+
+
+///////// BUTTONS /////////
+.sort {
+  background-color: #333333;
+  color: white;
+  display: inline-block;
+  font-weight: 900;
+  padding: 0.3em 0.5em;
+  border-radius: 5px;
+  margin: 0.3em 0.5em 0.3em 0;
+
+  i { margin-left: 10px; }
+}
+
+.sort:hover {
+  background-color: #676565;
+}
+
+.namesearch { width: 80%; }
+.search { margin: 0.5em 0 0 0; }
+
+.headline {
+  font-weight: 900;
+  text-align: center;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  margin: 0.5em;
+}
+
+.courtFilter {
+  font-weight: 900;
+  font-size: 1.5em;
+}
+
+.courtbutton {
+  background-color: #dadada;
+}
+
+.entryHolder {
+  height: 200px;
+  visibility: hidden;
+  overflow-y: auto;
+  width: 80%;
+  margin-left: 103px;
+
+  .entry {
+    border-bottom: 1px solid #ccc;
+    background-color: #efefef;
+    padding: 5px;
+  }
+
+  .entry:hover { background-color: #ffffff; }
+}
+
+.restOfButtons {  }

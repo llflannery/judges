@@ -1,7 +1,34 @@
 <div class="buttonHolder">
-<div class="search">Find a Judge: <input type="text" name="fname"></div>
- <div class="sortAZ">Sort Alphabetically <i class="fa fa-arrow-up" aria-hidden="true"></i></div>
 
- <div class="sortAZ float">Sort by Retention</div>
- <div class="sortAZ float">Sort by Score</div>
+  <div class="restOfButtons">
+
+     <div class="sortAZ sort">Sort Alphabetically <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+
+     <div class="sortRet sort">Sort by Retention <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+     <div class="sortScore sort">Sort by Score <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+
+     <div class="courtFilter">Click on each court to filter results</div>
+     <div class="courtHolder">
+       <div class="sortCourt sort">Filter by Court</div>
+         <div class="courtbutton sort" id="supreme">Nevada Supreme Court</div>
+         <div class="courtbutton sort" id="appeals">Nevada Court of Appeals</div>
+         <div class="courtbutton sort" id="ccdistrict">Clark County District Court</div>
+         <div class="courtbutton sort" id="ccfamily">Clark County Family Court</div>
+         <div class="courtbutton sort" id="lvjustice">Las Vegas Justice Court</div>
+         <div class="courtbutton sort" id="lvmun">Las Vegas Municipal Court</div>
+         <div class="courtbutton sort" id="henjustice">Henderson Justice Court</div>
+         <div class="courtbutton sort" id="henmun">Henderson Municipal Court</div>
+         <div class="courtbutton sort" id="nlvjustice">North Las Vegas Justice Court</div>
+         <div class="courtbutton sort" id="nlvmun">Henderson Municipal Court</div>
+     </div>
+
+   </div>
+
+   <div class="search">Find a Judge: <input class="namesearch" type="text" name="fname"> <i class="fa fa-times-circle"></i></div>
+   <div class="entryHolder" id="entryHolder">
+     {% for item in DATA %}
+       <div class="entry">{{ item.jid }}</div>
+     {% endfor %}
+   </div>
+
 </div>

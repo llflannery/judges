@@ -1,27 +1,24 @@
-<div class="judges">
+<div id="judges">
 
 {% for item in DATA %}
   <div class="judge">
    <div class="topsummary">
-
      <div class="first">
        <img src="https://res.cloudinary.com/stephens-media/image/upload/v1572477570/JUDGING/{{ item.Headshot }}.jpg"/>
      </div>
-
      <div class="second">
        <div class="court">{{ item.Court }}</div>
        <div class="name">{{ item.jid }}</div>
        <div class="bio">{{ item.bio }}</div>
        <div class="retnum">{{ item.retobs }} retention responses for this judge</div>
      </div>
-
      <div class="third">
-       <div class="rating">
+       <div class="rating" data-score={{ item.ss }}>
          <div class="num">{{ item.ss }}</div>
          <div class="tease">Rating</div>
          <div class="tease2">(5-point scale)</div>
        </div>
-       <div class="retention">
+       <div class="retention" data-score={{ item.ret }}>
          {% if item.ret >= 50 %}
          <div class="num green">{{ item.ret }} %</div>
          {% else %}
@@ -31,104 +28,235 @@
          <div class="tease">Recommendation</div>
        </div>
      </div>
+   </div> <!--end of topsummary -->
 
-   </div>
 
-   <div class="summaryToggle"><div class="expand">Expand</div><div class="minimize">Minimize</div></div>
    <div class="summarybox">
     <div class="survey">2019 Survey Questions</div>
-    <div class="quesA summQuestion">
-      <div class="quesA summ">{{ item.a }}</div>
-      <div class='question'>The judge was <b>familiar</b> with the case record and documents.</div>
-    </div>
+    <div class="summQuestions">
+      <div class="quesA summQuestion">
+        <div class="quesA summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.a }}</div>
+        <div class='question'>The judge was <b>familiar</b> with the case record and documents.</div>
+        <div class="quesA stats">
+          <div class="sampleSize">{{ item.a_7 }} responses</div>
+          <div class="statsHeader">Breakdown of Question Summary Score</div>
+          <div class="statsNum one"><span class="category">No Opinion</span><span class="num">{{ item.a_1 }} %</span></div>
+          <div class="statsNum two"><span class="category">Strongly Disagree</span><span class="num">{{ item.a_2 }} %</span></div>
+          <div class="statsNum three"><span class="category">Disagree</span><span class="num">{{ item.a_3 }} %</span></div>
+          <div class="statsNum four"><span class="category">Neutral</span><span class="num">{{ item.a_4 }} %</span></div>
+          <div class="statsNum five"><span class="category">Agree</span><span class="num">{{ item.a_5 }} %</span></div>
+          <div class="statsNum six"><span class="category">Strongly Agree</span><span class="num">{{ item.a_6 }} %</span></div>
+        </div>
+      </div>
 
-    <div class="quesB summQuestion">
-      <div class="quesB summ">{{ item.b }}</div>
-      <div class='question'>It was evident that the judge <b>weighed all evidence</b> and arguments fairly before rendering a decision.</div>
-    </div>
+      <div class="quesB summQuestion">
+        <div class="quesB summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.b }}</div>
+        <div class='question'>It was evident that the judge <b>weighed all evidence</b> and arguments fairly before rendering a decision.</div>
+        <div class="quesB stats">
+          <div class="sampleSize">{{ item.b_7 }} responses</div>
+          <div class="statsHeader">Breakdown of Question Summary Score</div>
+          <div class="statsNum one"><span class="category">No Opinion</span><span class="num">{{ item.b_1 }} %</span></div>
+          <div class="statsNum two"><span class="category">Strongly Disagree</span><span class="num">{{ item.b_2 }} %</span></div>
+          <div class="statsNum three"><span class="category">Disagree</span><span class="num">{{ item.b_3 }} %</span></div>
+          <div class="statsNum four"><span class="category">Neutral</span><span class="num">{{ item.b_4 }} %</span></div>
+          <div class="statsNum five"><span class="category">Agree</span><span class="num">{{ item.b_5 }} %</span></div>
+          <div class="statsNum six"><span class="category">Strongly Agree</span><span class="num">{{ item.b_6 }} %</span></div>
+        </div>
+      </div>
 
-    <div class="quesC summQuestion">
-      <div class="quesC summ">{{ item.c }}</div>
-      <div class='question'>The judge <b>accurately</b> applied the law, the rules of procedure, and/or the rules of evidence.</div>
-    </div>
+      <div class="quesC summQuestion">
+        <div class="quesC summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.c }}</div>
+        <div class='question'>The judge <b>accurately</b> applied the law, the rules of procedure, and/or the rules of evidence.</div>
+        <div class="quesC stats">
+          <div class="sampleSize">{{ item.c_7 }} responses</div>
+          <div class="statsHeader">Breakdown of Question Summary Score</div>
+          <div class="statsNum one"><span class="category">No Opinion</span><span class="num">{{ item.c_1 }} %</span></div>
+          <div class="statsNum two"><span class="category">Strongly Disagree</span><span class="num">{{ item.c_2 }} %</span></div>
+          <div class="statsNum three"><span class="category">Disagree</span><span class="num">{{ item.c_3 }} %</span></div>
+          <div class="statsNum four"><span class="category">Neutral</span><span class="num">{{ item.c_4 }} %</span></div>
+          <div class="statsNum five"><span class="category">Agree</span><span class="num">{{ item.c_5 }} %</span></div>
+          <div class="statsNum six"><span class="category">Strongly Agree</span><span class="num">{{ item.c_6 }} %</span></div>
+        </div>
+      </div>
 
-    <div class="quesD summQuestion">
-      <div class="quesD summ">{{ item.d }}</div>
-      <div class='question'>The judge’s explanation of the basis for their decision was <b>clear.</b></div>
-    </div>
+      <div class="quesD summQuestion">
+        <div class="quesD summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.d }}</div>
+        <div class='question'>The judge’s explanation of the basis for their decision was <b>clear.</b></div>
+        <div class="quesD stats">
+          <div class="sampleSize">{{ item.d_7 }} responses</div>
+          <div class="statsHeader">Breakdown of Question Summary Score</div>
+          <div class="statsNum one"><span class="category">No Opinion</span><span class="num">{{ item.d_1 }} %</span></div>
+          <div class="statsNum two"><span class="category">Strongly Disagree</span><span class="num">{{ item.d_2 }} %</span></div>
+          <div class="statsNum three"><span class="category">Disagree</span><span class="num">{{ item.d_3 }} %</span></div>
+          <div class="statsNum four"><span class="category">Neutral</span><span class="num">{{ item.d_4 }} %</span></div>
+          <div class="statsNum five"><span class="category">Agree</span><span class="num">{{ item.d_5 }} %</span></div>
+          <div class="statsNum six"><span class="category">Strongly Agree</span><span class="num">{{ item.d_6 }} %</span></div>
+        </div>
+      </div>
 
-    <div class="quesE summQuestion">
-      <div class="quesE summ">{{ item.e }}</div>
-      <div class='question'>The judge's behavior was free from the <b>appearance of impropriety.</b></div>
-    </div>
+      <div class="quesE summQuestion">
+        <div class="quesE summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.e }}</div>
+        <div class='question'>The judge's behavior was free from the <b>appearance of impropriety.</b></div>
+        <div class="quesE stats">
+          <div class="sampleSize">{{ item.e_7 }} responses</div>
+          <div class="statsHeader">Breakdown of Question Summary Score</div>
+          <div class="statsNum one"><span class="category">No Opinion</span><span class="num">{{ item.e_1 }} %</span></div>
+          <div class="statsNum two"><span class="category">Strongly Disagree</span><span class="num">{{ item.e_2 }} %</span></div>
+          <div class="statsNum three"><span class="category">Disagree</span><span class="num">{{ item.e_3 }} %</span></div>
+          <div class="statsNum four"><span class="category">Neutral</span><span class="num">{{ item.e_4 }} %</span></div>
+          <div class="statsNum five"><span class="category">Agree</span><span class="num">{{ item.e_5 }} %</span></div>
+          <div class="statsNum six"><span class="category">Strongly Agree</span><span class="num">{{ item.e_6 }} %</span></div>
+        </div>
+      </div>
 
-    <div class="quesF summQuestion">
-      <div class="quesF summ">{{ item.f }}</div>
-      <div class='question'>The judge's conduct in the matter was free from bias on the basis of the <b>race or ethnicity</b> of the parties involved.</div>
-    </div>
+      <div class="quesF summQuestion">
+        <div class="quesF summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.f }}</div>
+        <div class='question'>The judge's conduct in the matter was free from bias on the basis of the <b>race or ethnicity</b> of the parties involved.</div>
+        <div class="quesF stats">
+          <div class="sampleSize">{{ item.f_7 }} responses</div>
+          <div class="statsHeader">Breakdown of Question Summary Score</div>
+          <div class="statsNum one"><span class="category">No Opinion</span><span class="num">{{ item.f_1 }} %</span></div>
+          <div class="statsNum two"><span class="category">Strongly Disagree</span><span class="num">{{ item.f_2 }} %</span></div>
+          <div class="statsNum three"><span class="category">Disagree</span><span class="num">{{ item.f_3 }} %</span></div>
+          <div class="statsNum four"><span class="category">Neutral</span><span class="num">{{ item.f_4 }} %</span></div>
+          <div class="statsNum five"><span class="category">Agree</span><span class="num">{{ item.f_5 }} %</span></div>
+          <div class="statsNum six"><span class="category">Strongly Agree</span><span class="num">{{ item.f_6 }} %</span></div>
+        </div>
+      </div>
 
-    <div class="quesG summQuestion">
-      <div class="quesG summ">{{ item.g }}</div>
-      <div class='question'>The judge's conduct in the matter was free from bias on the basis of the <b>gender</b> of the parties involved.</div>
-    </div>
+      <div class="quesG summQuestion">
+        <div class="quesG summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.g }}</div>
+        <div class='question'>The judge's conduct in the matter was free from bias on the basis of the <b>gender</b> of the parties involved.</div>
+        <div class="quesG stats">
+          <div class="sampleSize">{{ item.g_7 }} responses</div>
+          <div class="statsHeader">Breakdown of Question Summary Score</div>
+          <div class="statsNum one"><span class="category">No Opinion</span><span class="num">{{ item.g_1 }} %</span></div>
+          <div class="statsNum two"><span class="category">Strongly Disagree</span><span class="num">{{ item.g_2 }} %</span></div>
+          <div class="statsNum three"><span class="category">Disagree</span><span class="num">{{ item.g_3 }} %</span></div>
+          <div class="statsNum four"><span class="category">Neutral</span><span class="num">{{ item.g_4 }} %</span></div>
+          <div class="statsNum five"><span class="category">Agree</span><span class="num">{{ item.g_5 }} %</span></div>
+          <div class="statsNum six"><span class="category">Strongly Agree</span><span class="num">{{ item.g_6 }} %</span></div>
+        </div>
+      </div>
 
-    <div class="quesH summQuestion">
-      <div class="quesH summ">{{ item.h }}</div>
-      <div class='question'>The judge's conduct in the matter was free from bias on the basis of the <b>religion</b> of the parties involved.</div>
-    </div>
+      <div class="quesH summQuestion">
+        <div class="quesH summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.h }}</div>
+        <div class='question'>The judge's conduct in the matter was free from bias on the basis of the <b>religion</b> of the parties involved.</div>
+        <div class="quesH stats">
+          <div class="sampleSize">{{ item.h_7 }} responses</div>
+          <div class="statsHeader">Breakdown of Question Summary Score</div>
+          <div class="statsNum one"><span class="category">No Opinion</span><span class="num">{{ item.h_1 }} %</span></div>
+          <div class="statsNum two"><span class="category">Strongly Disagree</span><span class="num">{{ item.h_2 }} %</span></div>
+          <div class="statsNum three"><span class="category">Disagree</span><span class="num">{{ item.h_3 }} %</span></div>
+          <div class="statsNum four"><span class="category">Neutral</span><span class="num">{{ item.h_4 }} %</span></div>
+          <div class="statsNum five"><span class="category">Agree</span><span class="num">{{ item.h_5 }} %</span></div>
+          <div class="statsNum six"><span class="category">Strongly Agree</span><span class="num">{{ item.h_6 }} %</span></div>
+        </div>
+      </div>
 
-    <div class="quesI summQuestion">
-      <div class="quesI summ">{{ item.i }}</div>
-      <div class='question'>The judge's conduct in the matter was free from bias on the basis of the <b>particular parties</b> or attorneys involved.</div>
-    </div>
+      <div class="quesI summQuestion">
+        <div class="quesI summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.i }}</div>
+        <div class='question'>The judge's conduct in the matter was free from bias on the basis of the <b>particular parties</b> or attorneys involved.</div>
+        <div class="quesI stats">
+          <div class="sampleSize">{{ item.i_7 }} responses</div>
+          <div class="statsHeader">Breakdown of Question Summary Score</div>
+          <div class="statsNum one"><span class="category">No Opinion</span><span class="num">{{ item.i_1 }} %</span></div>
+          <div class="statsNum two"><span class="category">Strongly Disagree</span><span class="num">{{ item.i_2 }} %</span></div>
+          <div class="statsNum three"><span class="category">Disagree</span><span class="num">{{ item.i_3 }} %</span></div>
+          <div class="statsNum four"><span class="category">Neutral</span><span class="num">{{ item.i_4 }} %</span></div>
+          <div class="statsNum five"><span class="category">Agree</span><span class="num">{{ item.i_5 }} %</span></div>
+          <div class="statsNum six"><span class="category">Strongly Agree</span><span class="num">{{ item.i_6 }} %</span></div>
+        </div>
+      </div>
 
-    <div class="quesJ summQuestion">
-      <div class="quesJ summ">{{ item.j }}</div>
-      <div class='question'>The judge consistently demonstrated <b>courtesy and respect</b>.</div>
-    </div>
+      <div class="quesJ summQuestion">
+        <div class="quesJ summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.j }}</div>
+        <div class='question'>The judge consistently demonstrated <b>courtesy and respect</b>.</div>
+        <div class="quesJ stats">
+          <div class="sampleSize">{{ item.j_7 }} responses</div>
+          <div class="statsHeader">Breakdown of Question Summary Score</div>
+          <div class="statsNum one"><span class="category">No Opinion</span><span class="num">{{ item.j_1 }} %</span></div>
+          <div class="statsNum two"><span class="category">Strongly Disagree</span><span class="num">{{ item.j_2 }} %</span></div>
+          <div class="statsNum three"><span class="category">Disagree</span><span class="num">{{ item.j_3 }} %</span></div>
+          <div class="statsNum four"><span class="category">Neutral</span><span class="num">{{ item.j_4 }} %</span></div>
+          <div class="statsNum five"><span class="category">Agree</span><span class="num">{{ item.j_5 }} %</span></div>
+          <div class="statsNum six"><span class="category">Strongly Agree</span><span class="num">{{ item.j_6 }} %</span></div>
+        </div>
+      </div>
 
 
-    {% if item.k %}
-    <div class="quesK summQuestion">
-      <div class="quesK summ">{{ item.k }}</div>
-      <div class='question'>The judge seemed <b>attentive</b> to the matter at hand.</div>
-    </div>
-    {% else %}
-    {% endif %}
+      {% if item.k %}
+      <div class="quesK summQuestion">
+        <div class="quesK summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.k }}</div>
+        <div class='question'>The judge seemed <b>attentive</b> to the matter at hand.</div>
+        <div class="quesK stats">
+          <div class="sampleSize">{{ item.k_7 }} responses</div>
+          <div class="statsHeader">Breakdown of Question Summary Score</div>
+          <div class="statsNum one"><span class="category">No Opinion</span><span class="num">{{ item.k_1 }} %</span></div>
+          <div class="statsNum two"><span class="category">Strongly Disagree</span><span class="num">{{ item.k_2 }} %</span></div>
+          <div class="statsNum three"><span class="category">Disagree</span><span class="num">{{ item.k_3 }} %</span></div>
+          <div class="statsNum four"><span class="category">Neutral</span><span class="num">{{ item.k_4 }} %</span></div>
+          <div class="statsNum five"><span class="category">Agree</span><span class="num">{{ item.k_5 }} %</span></div>
+          <div class="statsNum six"><span class="category">Strongly Agree</span><span class="num">{{ item.k_6 }} %</span></div>
 
-    {% if item.l %}
-    <div class="quesL summQuestion">
-      <div class="quesL summ">{{ item.l }}</div>
-      <div class='question'>The judge was successful at keeping court business <b>moving appropriately</b>.</div>
-    </div>
-    {% else %}
-    {% endif %}
-
-    {% if item.m %}
-    <div class="quesm summQuestion">
-      <div class="quesm summ">{{ item.m }}</div>
-      <div class='question'>The judge’s behavior was <b>consistent</b>.</div>
-    </div>
-    {% else %}
-    {% endif %}
-
-    {% if item.2013ret %}
-    <div class="prevSurvey">
-      <div class="label">2013 survey</div>
-      {% if item.2013ret >= 50 %}
-      <div class="ret"><span class="num green">{{ item.2013ret }} %</span><span class="tease3">Retention Recommendation</div></div>
+        </div>
+      </div>
       {% else %}
-      <div class="ret"><span class="num red">{{ item.2013ret }} %</span><span class="tease3">Retention Recommendation</span></div>
       {% endif %}
-    </div>
-    {% else %}
-    {% endif %}
 
+      {% if item.l %}
+      <div class="quesL summQuestion">
+        <div class="quesL summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.l }}</div>
+        <div class='question'>The judge was successful at keeping court business <b>moving appropriately</b>.</div>
+        <div class="quesL stats">
+          <div class="sampleSize">{{ item.l_7 }} responses</div>
+          <div class="statsHeader">Breakdown of Question Summary Score</div>
+          <div class="statsNum one"><span class="category">No Opinion</span><span class="num">{{ item.l_1 }} %</span></div>
+          <div class="statsNum two"><span class="category">Strongly Disagree</span><span class="num">{{ item.l_2 }} %</span></div>
+          <div class="statsNum three"><span class="category">Disagree</span><span class="num">{{ item.l_3 }} %</span></div>
+          <div class="statsNum four"><span class="category">Neutral</span><span class="num">{{ item.l_4 }} %</span></div>
+          <div class="statsNum five"><span class="category">Agree</span><span class="num">{{ item.l_5 }} %</span></div>
+          <div class="statsNum six"><span class="category">Strongly Agree</span><span class="num">{{ item.l_6 }}  %</span></div>
+        </div>
+      </div>
+      {% else %}
+      {% endif %}
 
+      {% if item.m %}
+      <div class="quesM summQuestion">
+        <div class="quesM summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.m }}</div>
+        <div class='question'>The judge’s behavior was <b>consistent</b>.</div>
+        <div class="quesM stats">
+          <div class="sampleSize">{{ item.m_7 }} responses</div>
+          <div class="statsHeader">Breakdown of Question Summary Score</div>
+          <div class="statsNum one"><span class="category">No Opinion</span><span class="num">{{ item.m_1 }} %</span></div>
+          <div class="statsNum two"><span class="category">Strongly Disagree</span><span class="num">{{ item.m_2 }} %</span></div>
+          <div class="statsNum three"><span class="category">Disagree</span><span class="num">{{ item.m_3 }} %</span></div>
+          <div class="statsNum four"><span class="category">Neutral</span><span class="num">{{ item.m_4 }} %</span></div>
+          <div class="statsNum five"><span class="category">Agree</span><span class="num">{{ item.m_5 }} %</span></div>
+          <div class="statsNum six"><span class="category">Strongly Agree</span><span class="num">{{ item.m_6 }} %</span></div>
+        </div>
+      </div>
+      {% else %}
+      {% endif %}
+      </div>
 
+      {% if item.2013ret %}
+      <div class="prevSurvey">
+        <div class="label">2013 survey</div>
+        {% if item.2013ret >= 50 %}
+        <div class="ret"><span class="num green">{{ item.2013ret }} %</span><span class="tease3">Retention Recommendation</span></div>
+        {% else %}
+        <div class="ret"><span class="num red">{{ item.2013ret }} %</span><span class="tease3">Retention Recommendation</span></div>
+        {% endif %}
+      </div>
+      {% else %}
+      {% endif %}
 
-   </div>
-  </div>
+   </div> <!--summary box -->
+
+   <div class="summaryToggle"><div class="expand taglabel">Expand</div><div class="minimize taglabel">Minimize</div></div>
+   </div> <!--judge end -->
 {% endfor %}
 
-</div>
+</div> <!--judges end -->
