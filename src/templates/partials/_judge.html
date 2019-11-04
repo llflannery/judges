@@ -1,7 +1,7 @@
 <div id="judges">
 
 {% for item in DATA %}
-  <div class="judge">
+  <div class="judge" id="{{ item.Headshot }}">
    <div class="topsummary">
      <div class="first">
        <img src="https://res.cloudinary.com/stephens-media/image/upload/v1572477570/JUDGING/{{ item.Headshot }}.jpg"/>
@@ -35,7 +35,7 @@
     <div class="survey">2019 Survey Questions</div>
     <div class="summQuestions">
       <div class="quesA summQuestion">
-        <div class="quesA summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.a }}</div>
+        <div class="quesA summ"><i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i> {{ item.a }}</div>
         <div class='question'>The judge was <b>familiar</b> with the case record and documents.</div>
         <div class="quesA stats">
           <div class="sampleSize">{{ item.a_7 }} responses</div>
@@ -50,7 +50,7 @@
       </div>
 
       <div class="quesB summQuestion">
-        <div class="quesB summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.b }}</div>
+        <div class="quesB summ"><i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i> {{ item.b }}</div>
         <div class='question'>It was evident that the judge <b>weighed all evidence</b> and arguments fairly before rendering a decision.</div>
         <div class="quesB stats">
           <div class="sampleSize">{{ item.b_7 }} responses</div>
@@ -65,7 +65,7 @@
       </div>
 
       <div class="quesC summQuestion">
-        <div class="quesC summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.c }}</div>
+        <div class="quesC summ"><i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i> {{ item.c }}</div>
         <div class='question'>The judge <b>accurately</b> applied the law, the rules of procedure, and/or the rules of evidence.</div>
         <div class="quesC stats">
           <div class="sampleSize">{{ item.c_7 }} responses</div>
@@ -80,7 +80,7 @@
       </div>
 
       <div class="quesD summQuestion">
-        <div class="quesD summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.d }}</div>
+        <div class="quesD summ"><i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i> {{ item.d }}</div>
         <div class='question'>The judge’s explanation of the basis for their decision was <b>clear.</b></div>
         <div class="quesD stats">
           <div class="sampleSize">{{ item.d_7 }} responses</div>
@@ -95,7 +95,7 @@
       </div>
 
       <div class="quesE summQuestion">
-        <div class="quesE summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.e }}</div>
+        <div class="quesE summ"><i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i> {{ item.e }}</div>
         <div class='question'>The judge's behavior was free from the <b>appearance of impropriety.</b></div>
         <div class="quesE stats">
           <div class="sampleSize">{{ item.e_7 }} responses</div>
@@ -110,7 +110,7 @@
       </div>
 
       <div class="quesF summQuestion">
-        <div class="quesF summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.f }}</div>
+        <div class="quesF summ"><i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i> {{ item.f }}</div>
         <div class='question'>The judge's conduct in the matter was free from bias on the basis of the <b>race or ethnicity</b> of the parties involved.</div>
         <div class="quesF stats">
           <div class="sampleSize">{{ item.f_7 }} responses</div>
@@ -125,7 +125,7 @@
       </div>
 
       <div class="quesG summQuestion">
-        <div class="quesG summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.g }}</div>
+        <div class="quesG summ"><i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i> {{ item.g }}</div>
         <div class='question'>The judge's conduct in the matter was free from bias on the basis of the <b>gender</b> of the parties involved.</div>
         <div class="quesG stats">
           <div class="sampleSize">{{ item.g_7 }} responses</div>
@@ -140,7 +140,7 @@
       </div>
 
       <div class="quesH summQuestion">
-        <div class="quesH summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.h }}</div>
+        <div class="quesH summ"><i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i> {{ item.h }}</div>
         <div class='question'>The judge's conduct in the matter was free from bias on the basis of the <b>religion</b> of the parties involved.</div>
         <div class="quesH stats">
           <div class="sampleSize">{{ item.h_7 }} responses</div>
@@ -155,7 +155,7 @@
       </div>
 
       <div class="quesI summQuestion">
-        <div class="quesI summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.i }}</div>
+        <div class="quesI summ"><i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i> {{ item.i }}</div>
         <div class='question'>The judge's conduct in the matter was free from bias on the basis of the <b>particular parties</b> or attorneys involved.</div>
         <div class="quesI stats">
           <div class="sampleSize">{{ item.i_7 }} responses</div>
@@ -170,7 +170,7 @@
       </div>
 
       <div class="quesJ summQuestion">
-        <div class="quesJ summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.j }}</div>
+        <div class="quesJ summ"><i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i> {{ item.j }}</div>
         <div class='question'>The judge consistently demonstrated <b>courtesy and respect</b>.</div>
         <div class="quesJ stats">
           <div class="sampleSize">{{ item.j_7 }} responses</div>
@@ -187,7 +187,7 @@
 
       {% if item.k %}
       <div class="quesK summQuestion">
-        <div class="quesK summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.k }}</div>
+        <div class="quesK summ"><i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i> {{ item.k }}</div>
         <div class='question'>The judge seemed <b>attentive</b> to the matter at hand.</div>
         <div class="quesK stats">
           <div class="sampleSize">{{ item.k_7 }} responses</div>
@@ -206,7 +206,7 @@
 
       {% if item.l %}
       <div class="quesL summQuestion">
-        <div class="quesL summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.l }}</div>
+        <div class="quesL summ"><i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i> {{ item.l }}</div>
         <div class='question'>The judge was successful at keeping court business <b>moving appropriately</b>.</div>
         <div class="quesL stats">
           <div class="sampleSize">{{ item.l_7 }} responses</div>
@@ -224,7 +224,7 @@
 
       {% if item.m %}
       <div class="quesM summQuestion">
-        <div class="quesM summ"><i class="fa fa-caret-down" aria-hidden="true"></i> {{ item.m }}</div>
+        <div class="quesM summ"><i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i> {{ item.m }}</div>
         <div class='question'>The judge’s behavior was <b>consistent</b>.</div>
         <div class="quesM stats">
           <div class="sampleSize">{{ item.m_7 }} responses</div>

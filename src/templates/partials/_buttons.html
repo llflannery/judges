@@ -24,10 +24,10 @@
 
    </div>
 
-   <div class="search">Find a Judge: <input class="namesearch" type="text" name="fname"> <i class="fa fa-times-circle"></i></div>
+   <div class="search">Find a Judge: <input class="namesearch" id="thisInput" type="text" name="fname"> <i class="fa fa-times-circle"></i></div>
    <div class="entryHolder" id="entryHolder">
      {% for item in DATA %}
-       <div class="entry">{{ item.jid }}</div>
+       <div class="entry" id="{{ item.Headshot }}">{{ item.jid }}</div>
      {% endfor %}
    </div>
 

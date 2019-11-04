@@ -3,9 +3,11 @@ import '../scss/main.scss';
 $( document ).ready(function() {
     console.log( "ready!" );
 
-$( ".summ i" ).click(function() {
+$( ".summ" ).click(function() {
   console.log("hellooooo");
-  $( this ).parent().siblings('.stats').slideToggle( "slow", function() {});
+  $( this ).siblings('.stats').slideToggle( "slow", function() {});
+  $( this ).find('i.fa-caret-up').toggle();
+  $( this ).find('i.fa-caret-down').toggle();
 });
 
 
@@ -64,6 +66,28 @@ function filterFunction(myInput) {
     txtValue.toUpperCase().indexOf(filter) > -1 ? a[i].style.display = "" : a[i].style.display = "none";
   }
 }
+
+
+$( ".entry" ).click(function() {
+  document.getElementById("thisInput").value = $(this).text();
+  $('.entryHolder').css("visibility", "hidden");
+  var selectedID = $(this).attr('id');
+  $('.judge').css('display','none');
+  $('#judges').find('#' + selectedID).css('display','block');
+});
+
+$(".fa-times-circle").click(function () {
+  $('#judges').find('.judge').css("display","block");
+  $(this).siblings('#thisInput').val('');
+  var e = $.Event('keyup');
+  e.keyCode = 46; // enter
+
+  $(this).siblings("#thisInput input[type='text']").select().trigger(e);
+  $(this).siblings('#thisInput').trigger(e);
+  $('.entryHolder').css("visibility", "hidden");
+});
+
+
 
 
 });
