@@ -1,8 +1,8 @@
 <div id="judges">
 
 {% for item in DATA %}
-  <div class="judge" id="{{ item.Headshot }}">
-   <div class="topsummary">
+  <div class="judge {{ item.courtID }}" id="{{ item.Headshot }}">
+   <div class="topsummary" data-score={{ loop.index }} >
      <div class="first">
        <img src="https://res.cloudinary.com/stephens-media/image/upload/v1572477570/JUDGING/{{ item.Headshot }}.jpg"/>
      </div>

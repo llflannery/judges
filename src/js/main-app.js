@@ -3,8 +3,8 @@ import '../scss/main.scss';
 $( document ).ready(function() {
     console.log( "ready!" );
 
+//toggle down
 $( ".summ" ).click(function() {
-  console.log("hellooooo");
   $( this ).siblings('.stats').slideToggle( "slow", function() {});
   $( this ).find('i.fa-caret-up').toggle();
   $( this ).find('i.fa-caret-down').toggle();
@@ -13,16 +13,39 @@ $( ".summ" ).click(function() {
 
 
 $( ".summaryToggle" ).click(function() {
-  console.log("helloooooMEEE");
   $( this ).prev('.summarybox').slideToggle( "slow", function() {});
-
   $(this).find('.expand').toggle();
   $(this).find('.minimize').toggle();
 });
 
-$(".sortRet").on("click", function () {
-    // sortAsc('.judge .topsummary .third .retention','data-score');
-    sortDesc('.judge .topsummary .third .retention','data-score');
+// $(".sortRet").on("click", function () {
+//     // sortAsc('.judge .topsummary .third .retention','data-score');
+//     sortDesc('.judge .topsummary .third .retention','data-score');
+// });
+
+$(".sort").on("click", "i", function () {
+  console.log(this);
+
+  if ( $(this).parent().attr('id') === "sortRet" ){
+
+    if ( $(this).attr('class') === 'fa fa-caret-down' ) {
+      sortDesc('.judge .topsummary .third .retention','data-score');
+    } else if ( $(this).attr('class') === 'fa fa-caret-up') {
+      sortAsc('.judge .topsummary .third .retention','data-score');
+    } else {  sortAsc('.judge .topsummary','data-score'); }
+
+  } else if ( $(this).parent().attr('id') === "sortScore" ) {
+
+    if ( $(this).attr('class') === 'fa fa-caret-down' ) {
+      sortDesc('.judge .topsummary .third .rating','data-score');
+    } else if ( $(this).attr('class') === 'fa fa-caret-up') {
+      sortAsc('.judge .topsummary .third .rating','data-score');
+    } else { sortAsc('.judge .topsummary','data-score');  }
+
+  } else { console.log("what did I even push"); }
+
+  $('.sort i').removeClass('selected');
+  $(this).addClass('selected');
 });
 
 function sortAsc(sortElement, dataAttr) {
@@ -86,6 +109,26 @@ $(".fa-times-circle").click(function () {
   $(this).siblings('#thisInput').trigger(e);
   $('.entryHolder').css("visibility", "hidden");
 });
+
+
+function countJudges() {
+  var count = $(".judge:visible").length;
+  $('.buttonHolder').find('.numJudges span').text(count);
+  console.log(count);
+}
+
+
+$(".courtbutton").click(function () {
+  $('.courtbutton').removeClass('selected');
+  $( this ).addClass('selected');
+
+  var selectedID = $( this ).attr('id');
+
+  $('#judges').find('.judge').hide();
+  $('#judges').find('.judge.' + selectedID ).show();
+  countJudges();
+});
+
 
 
 

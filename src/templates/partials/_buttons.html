@@ -1,15 +1,10 @@
 <div class="buttonHolder">
 
-  <div class="restOfButtons">
 
-     <div class="sortAZ sort">Sort Alphabetically <i class="fa fa-caret-down" aria-hidden="true"></i></div>
-
-     <div class="sortRet sort">Sort by Retention <i class="fa fa-caret-down" aria-hidden="true"></i></div>
-     <div class="sortScore sort">Sort by Score <i class="fa fa-caret-down" aria-hidden="true"></i></div>
-
+     <!-- <div class="sortAZ sort">Sort Alphabetically <i class="fa fa-caret-down" aria-hidden="true"></i></div> -->
      <div class="courtFilter">Click on each court to filter results</div>
      <div class="courtHolder">
-       <div class="sortCourt sort">Filter by Court</div>
+         <div class="courtbutton sort selected" id="all">All Courts</div>
          <div class="courtbutton sort" id="supreme">Nevada Supreme Court</div>
          <div class="courtbutton sort" id="appeals">Nevada Court of Appeals</div>
          <div class="courtbutton sort" id="ccdistrict">Clark County District Court</div>
@@ -20,9 +15,9 @@
          <div class="courtbutton sort" id="henmun">Henderson Municipal Court</div>
          <div class="courtbutton sort" id="nlvjustice">North Las Vegas Justice Court</div>
          <div class="courtbutton sort" id="nlvmun">Henderson Municipal Court</div>
+         <div class="numJudges"><span>89</span> Judges</div>
      </div>
 
-   </div>
 
    <div class="search">Find a Judge: <input class="namesearch" id="thisInput" type="text" name="fname"> <i class="fa fa-times-circle"></i></div>
    <div class="entryHolder" id="entryHolder">
@@ -30,5 +25,11 @@
        <div class="entry" id="{{ item.Headshot }}">{{ item.jid }}</div>
      {% endfor %}
    </div>
+
+   <div class="topsorts">
+     <div id="sortScore" class="sortScore sort">Sort by Score <i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i></div>
+     <div id="sortRet" class="sortRet sort">Sort by Retention <i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i></div>
+   </div>
+
 
 </div>

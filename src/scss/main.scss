@@ -6,7 +6,7 @@ font-family: 'Raleway',sans-serif;
 
 .judge {
   border-bottom: 10px solid black;
-  margin: 3em auto;
+  margin: 0.2em auto 3em auto;
 
   .first {
     max-width: 120px;
@@ -124,6 +124,7 @@ font-family: 'Raleway',sans-serif;
       font-weight: bold;
       display: inline-block;
       padding: 3px 5px;
+      width: 40px;
 
 
       i:active { color: red; }
@@ -256,6 +257,9 @@ font-family: 'Raleway',sans-serif;
 
 
 ///////// BUTTONS /////////
+
+.buttonHolder { position: relative; }
+
 .sort {
   background-color: #333333;
   color: white;
@@ -263,17 +267,41 @@ font-family: 'Raleway',sans-serif;
   font-weight: 900;
   padding: 0.3em 0.5em;
   border-radius: 5px;
-  margin: 0.3em 0.5em 0.3em 0;
 
-  i { margin-left: 10px; }
+  i {
+    margin-left: 10px;
+    padding: 5px 9px;
+    background-color: #5f5f5f;
+    border-radius: 5px;
+    font-size: 1.2em;
+    color: white;
+   }
+
+   i:hover {
+     background-color: #63b8fb;
+   }
+   i.selected {
+     background-color: #63b8fb;
+   }
 }
 
-.sort:hover {
-  background-color: #676565;
+.topsorts {
+  background-color: #333333;
+  text-align: right;
+  margin-top: 2em;
 }
 
 .namesearch { width: 80%; }
-.search { margin: 0.5em 0 0 0; }
+.search {
+  margin: 0.5em 0 0 0;
+
+  .fa-times-circle {
+    cursor: pointer;
+    color: #1a7cc9;
+    font-size: 1.5em;
+  }
+  .fa-times-circle:hover { color: #2993e6; }
+}
 
 .headline {
   font-weight: 900;
@@ -290,14 +318,19 @@ font-family: 'Raleway',sans-serif;
 
 .courtbutton {
   background-color: #dadada;
+  margin: 0.2em 0.2em 0.2em 0;
+
+  &.selected { background-color: #333333; }
 }
 
-.fa-times-circle {
-  cursor: pointer;
-  color: #1a7cc9;
-  font-size: 1.5em;
+.courtbutton:hover { background-color: #333333; }
+
+.numJudges {
+  display: inline-block;
+  font-style: italic;
 }
-.fa-times-circle:hover { color: #2993e6; }
+
+
 
 .entryHolder {
   height: 200px;
