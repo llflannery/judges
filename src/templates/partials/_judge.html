@@ -2,20 +2,21 @@
 
 {% for item in DATA %}
   <div class="judge {{ item.courtID }}" id="{{ item.Headshot }}">
+
    <div class="topsummary" data-score={{ loop.index }} >
      <div class="first">
        <img src="https://res.cloudinary.com/stephens-media/image/upload/v1572477570/JUDGING/{{ item.Headshot }}.jpg"/>
      </div>
      <div class="second">
        <div class="court">{{ item.Court }}</div>
-       <div class="name">{{ item.jid }}</div>
+       <a href="#{{ item.Headshot}}"><div class="name">{{ item.jid }}</div></a>
        <div class="bio">{{ item.bio }}</div>
        <div class="retnum">{{ item.retobs }} retention responses for this judge</div>
      </div>
      <div class="third">
        <div class="rating" data-score={{ item.ss }}>
          <div class="num">{{ item.ss }}</div>
-         <div class="tease">Rating</div>
+         <div class="tease">Summary Score</div>
          <div class="tease2">(5-point scale)</div>
        </div>
        <div class="retention" data-score={{ item.ret }}>
@@ -244,10 +245,17 @@
       {% if item.2013ret %}
       <div class="prevSurvey">
         <div class="label">2013 survey</div>
+        <div class="ret">
         {% if item.2013ret >= 50 %}
-        <div class="ret"><span class="num green">{{ item.2013ret }} %</span><span class="tease3">Retention Recommendation</span></div>
+          <span class="num green">{{ item.2013ret }} %</span>
         {% else %}
-        <div class="ret"><span class="num red">{{ item.2013ret }} %</span><span class="tease3">Retention Recommendation</span></div>
+          <span class="num red">{{ item.2013ret }} %</span>
+        {% endif %}
+          <span class="tease3">Retention Recommendation</span>
+        </div>
+        {% if item.2013pos %}
+          <div class="position">* {{ item.2013pos }}</div>
+        {% else %}
         {% endif %}
       </div>
       {% else %}
@@ -255,7 +263,8 @@
 
    </div> <!--summary box -->
 
-   <div class="summaryToggle"><div class="expand taglabel">Expand</div><div class="minimize taglabel">Minimize</div></div>
+    <div class="summaryToggle"><div class="expand taglabel">Expand</div><div class="minimize taglabel">Minimize</div></div>
+
    </div> <!--judge end -->
 {% endfor %}
 

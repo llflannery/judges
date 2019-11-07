@@ -8,6 +8,7 @@ $( ".summ" ).click(function() {
   $( this ).siblings('.stats').slideToggle( "slow", function() {});
   $( this ).find('i.fa-minus-square').toggle();
   $( this ).find('i.fa-plus-square').toggle();
+  $( this ).toggleClass('selected');
 });
 
 
@@ -77,6 +78,8 @@ function sortDesc(sortElement, dataAttr) {
 $(".namesearch").keyup(function (e) {
   filterFunction(this);
   $(this).parent().find('.entryHolder').css("visibility", "inherit");
+  $('.courtbutton').removeClass('selected');
+  $('.courtbutton#all').addClass('selected');
 });
 
 function filterFunction(myInput) {
@@ -114,11 +117,11 @@ $(".fa-times-circle").click(function () {
 });
 
 
-function countJudges() {
-  var count = $(".judge:visible").length;
-  $('.buttonHolder').find('.numJudges span').text(count);
-  console.log(count);
-}
+// function countJudges() {
+//   var count = $(".judge:visible").length;
+//   $('.buttonHolder').find('.numJudges span').text(count);
+//   console.log(count);
+// }
 
 
 $(".courtbutton").click(function () {
