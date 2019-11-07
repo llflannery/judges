@@ -2,33 +2,36 @@
 
 
      <!-- <div class="sortAZ sort">Sort Alphabetically <i class="fa fa-caret-down" aria-hidden="true"></i></div> -->
-     <div class="courtFilter">Click on each court to filter results</div>
+     <div class="courtFilter">Select a court to filter results <i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i></div>
      <div class="courtHolder">
-         <div class="courtbutton sort selected" id="all">All Courts</div>
-         <div class="courtbutton sort" id="supreme">Nevada Supreme Court</div>
-         <div class="courtbutton sort" id="appeals">Nevada Court of Appeals</div>
-         <div class="courtbutton sort" id="ccdistrict">Clark County District Court</div>
-         <div class="courtbutton sort" id="ccfamily">Clark County Family Court</div>
-         <div class="courtbutton sort" id="lvjustice">Las Vegas Justice Court</div>
-         <div class="courtbutton sort" id="lvmun">Las Vegas Municipal Court</div>
-         <div class="courtbutton sort" id="henjustice">Henderson Justice Court</div>
-         <div class="courtbutton sort" id="henmun">Henderson Municipal Court</div>
-         <div class="courtbutton sort" id="nlvjustice">North Las Vegas Justice Court</div>
-         <div class="courtbutton sort" id="nlvmun">Henderson Municipal Court</div>
-         <div class="numJudges"><span>89</span> Judges</div>
+         <div class="courtbutton selected" id="all">All Courts <span>89 judges</span></div>
+         <div class="courtbutton" id="supreme">Nevada Supreme Court <span>7 judges</span></div>
+         <div class="courtbutton" id="appeals">Nevada Court of Appeals <span>3 judges</span></div>
+         <div class="courtbutton" id="ccdistrict">Clark County District Court <span>29 judges</span></div>
+         <div class="courtbutton" id="ccfamily">Clark County Family Court <span>19 judges</span></div>
+         <div class="courtbutton" id="lvjustice">Las Vegas Justice Court <span>15 judges</span></div>
+         <div class="courtbutton" id="lvmun">Las Vegas Municipal Court <span>6 judges</span></div>
+         <div class="courtbutton" id="henjustice">Henderson Justice Court <span>3 judges</span></div>
+         <div class="courtbutton" id="henmun">Henderson Municipal Court <span>3 judges</span></div>
+         <div class="courtbutton" id="nlvjustice">North Las Vegas Justice Court <span>3 judges</span></div>
+         <div class="courtbutton" id="nlvmun">Henderson Municipal Court <span>1 judge</span></div>
+         <!-- <div class="numJudges"><span>89</span> Judges</div> -->
      </div>
 
 
-   <div class="search">Find a Judge: <input class="namesearch" id="thisInput" type="text" name="fname"> <i class="fa fa-times-circle"></i></div>
-   <div class="entryHolder" id="entryHolder">
-     {% for item in DATA %}
-       <div class="entry" id="{{ item.Headshot }}">{{ item.jid }}</div>
-     {% endfor %}
-   </div>
+
 
    <div class="topsorts">
-     <div id="sortScore" class="sortScore sort">Sort by Score <i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i></div>
-     <div id="sortRet" class="sortRet sort">Sort by Retention <i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i></div>
+     <div id="sortScore" class="sortScore sort">Sort by rating <i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i></div>
+     <div id="sortRet" class="sortRet sort">Sort by retention recommendation <i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i></div>
+   </div>
+
+   <div class="search">Search: <input class="namesearch" id="thisInput" type="text" name="fname"> <i class="fa fa-times-circle"></i>
+     <div class="entryHolder" id="entryHolder">
+       {% for item in DATA %}
+         <div class="entry" id="{{ item.Headshot }}">{{ item.jid }}</div>
+       {% endfor %}
+     </div>
    </div>
 
 

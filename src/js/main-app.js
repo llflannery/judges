@@ -6,8 +6,8 @@ $( document ).ready(function() {
 //toggle down
 $( ".summ" ).click(function() {
   $( this ).siblings('.stats').slideToggle( "slow", function() {});
-  $( this ).find('i.fa-caret-up').toggle();
-  $( this ).find('i.fa-caret-down').toggle();
+  $( this ).find('i.fa-minus-square').toggle();
+  $( this ).find('i.fa-plus-square').toggle();
 });
 
 
@@ -18,10 +18,13 @@ $( ".summaryToggle" ).click(function() {
   $(this).find('.minimize').toggle();
 });
 
-// $(".sortRet").on("click", function () {
-//     // sortAsc('.judge .topsummary .third .retention','data-score');
-//     sortDesc('.judge .topsummary .third .retention','data-score');
-// });
+$( ".courtFilter" ).click(function() {
+  $( this ).next('.courtHolder').slideToggle( "slow", function() {});
+  $( ".courtFilter i.fa-caret-down" ).toggle();
+  $( ".courtFilter i.fa-caret-up" ).toggle();
+});
+
+
 
 $(".sort").on("click", "i", function () {
   console.log(this);
@@ -73,12 +76,12 @@ function sortDesc(sortElement, dataAttr) {
 
 $(".namesearch").keyup(function (e) {
   filterFunction(this);
-  $(this).parent().siblings('.entryHolder').css("visibility", "inherit");
+  $(this).parent().find('.entryHolder').css("visibility", "inherit");
 });
 
 function filterFunction(myInput) {
   var input, filter, ul, li, a, div, i, txtValue, thisentryholder;
-  thisentryholder = $(myInput).parent().siblings('.entryHolder').attr('id');
+  thisentryholder = $(myInput).parent().find('.entryHolder').attr('id');
   input = myInput;
   filter = input.value.toUpperCase();
   div = document.getElementById(thisentryholder);
@@ -125,8 +128,11 @@ $(".courtbutton").click(function () {
   var selectedID = $( this ).attr('id');
 
   $('#judges').find('.judge').hide();
-  $('#judges').find('.judge.' + selectedID ).show();
-  countJudges();
+
+  if ( selectedID === 'all' ) {
+    $('#judges').find('.judge' ).show();
+  } else { $('#judges').find('.judge.' + selectedID ).show(); }
+  // countJudges();
 });
 
 
