@@ -1,19 +1,27 @@
 .container {
 max-width: 1000px;
 margin: auto;
+padding: 10px;
 font-family: 'Raleway',sans-serif;
 
 .landing {
   padding: 5px 10px;
   text-align: center;
   text-transform: uppercase;
-  font-style: italic;
   font-weight: 900;
+  width: 200px;
+  margin: auto;
+  background-color: gray;
+  border-radius: 5px;
+  color: white;
+
+  a { text-decoration: none; color: white; }
 }
+.landing:hover { color: #2993e6; }
 
 
 
-.intro { line-height: 1.5em; }
+.intro { line-height: 1.7em; margin: 2em auto; font-family: "Merriweather",serif; font-size: 19px; text-align: center; }
 
 @media only screen and (max-width: 600px) {
   padding: 5px 12px;
@@ -95,7 +103,13 @@ font-family: 'Raleway',sans-serif;
       text-align: center;
       padding: 0 15px;
 
-      .tease { font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; }
+      .tease {
+        font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px;
+
+        @media only screen and (max-width: 330px) {
+          font-size: 0.7em;
+        }
+      }
       .tease2 { font-size: 0.9em; font-weight: normal; font-style: italic; }
 
       .num {
@@ -136,7 +150,30 @@ font-family: 'Raleway',sans-serif;
     background-color: black;
     font-weight: 900;
     padding: 0.5em;
+
+    span {
+      float: right;
+      font-weight: normal;
+      font-style: italic;
+      @media only screen and (max-width: 600px) {
+        float: none;
+        display: block;
+        margin-top: 5px;
+      }
+    }
   }
+
+  .surveyAll {
+    background-color: #bbb;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 3px 10px;
+
+    i.minimize { display: none; }
+  }
+
+  .surveyAll:hover {  background-color: #ddd; }
 
   .summQuestion {
     border-bottom: 1px solid black;
@@ -189,6 +226,9 @@ font-family: 'Raleway',sans-serif;
     .category {
       font-weight: bold;
       display: block;
+      @media only screen and (max-width: 600px) {
+        font-size: 0.9em;
+      }
     }
     @media only screen and (max-width: 600px) {
       padding: 0.5em;
@@ -199,6 +239,10 @@ font-family: 'Raleway',sans-serif;
     margin-left: 1em;
     padding-top: 0.5em;
     font-weight: 900;
+    @media only screen and (max-width: 600px) {
+      margin: 0;
+      padding: 0.5em;
+    }
   }
 
   .sampleSize {
@@ -215,6 +259,9 @@ font-family: 'Raleway',sans-serif;
     }
   }
 
+  @media only screen and (max-width: 600px) {
+    text-align: center;
+  }
 
 }
 
@@ -282,6 +329,17 @@ font-family: 'Raleway',sans-serif;
   .position { display: inline-block; font-weight: normal; text-transform: none; font-style: italic; }
 }
 
+.b2top {
+  font-size: 0.9em;
+  text-transform: uppercase;
+  display: none;
+  text-align: center;
+  margin-bottom: 1em;
+  @media only screen and (max-width: 600px) {
+    display: block;
+  }
+}
+
 
 ///////// BUTTONS /////////
 
@@ -301,17 +359,22 @@ font-family: 'Raleway',sans-serif;
     border-radius: 5px;
     font-size: 1.2em;
     color: white;
+    @media only screen and (max-width: 600px) {
+      margin-left: 5px;
+      font-size: 1.1em;
+    }
    }
 
    i:hover {
-     background-color: #63b8fb;
+     background-color: #1a7cc9;
    }
    i.selected {
-     background-color: #63b8fb;
+     background-color: #1a7cc9;
    }
 
    @media only screen and (max-width: 600px) {
      margin-bottom: 1em;
+     padding: 0.3em 0.3em;
    }
 }
 
@@ -338,7 +401,7 @@ font-family: 'Raleway',sans-serif;
   .fa-times-circle:hover { color: #2993e6; }
 
   @media only screen and (max-width: 600px) {
-    margin: 0.5em 10px;
+    margin: 0.5em 0;
     display: block;
     text-align: center;
   }
@@ -349,8 +412,40 @@ font-family: 'Raleway',sans-serif;
   text-align: center;
   font-size: 4em;
   text-transform: uppercase;
-  margin: 0.5em;
-  margin-bottom: 0.1em;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  position: relative;
+  line-height: 1em;
+
+  .pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.3;
+    z-index: -3;
+    max-width: 320px;
+
+    img { width: 100%; }
+
+    @media only screen and (max-width: 600px) {
+      width: 70%;
+      margin: auto;
+    }
+  }
+
+  .judging {
+    font-size: 1.2em;
+    padding-top: 0.7em;
+    line-height: 0.7em
+  }
+  .the { font-size: 0.6em; color: gray; }
+  .judges { font-size: 2.3em; padding-top: 5px; }
+
+
+  @media only screen and (max-width: 600px) {
+    font-size: 10vw;
+  }
 }
 
 .courtFilter {
@@ -367,6 +462,10 @@ font-family: 'Raleway',sans-serif;
 
   i { margin-left: 7px; }
   i.fa-caret-up { display: none; }
+
+  @media only screen and (max-width: 330px) {
+    font-size: 1em;
+  }
 }
 
 .courtFilter:hover { background-color: #2993e6; }
@@ -386,6 +485,10 @@ font-family: 'Raleway',sans-serif;
     &.selected { background-color: #fff; }
 
     span { float: right; font-style: italic; }
+
+    @media only screen and (max-width: 600px) {
+      font-size: 0.9em;
+    }
   }
 
   .courtbutton:hover { background-color: #fff; }

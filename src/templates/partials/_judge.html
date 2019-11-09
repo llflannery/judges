@@ -1,15 +1,15 @@
 <div id="judges">
 
 {% for item in DATA %}
-  <div class="judge {{ item.courtID }}" id="{{ item.Headshot }}">
-
+  <div class="judge {{ item.courtID }}">
    <div class="topsummary" data-score={{ loop.index }} >
+     <div class="b2top"><a href="#top">Back to top</a></div>
      <div class="first">
-       <img src="https://res.cloudinary.com/stephens-media/image/upload/v1572477570/JUDGING/{{ item.Headshot }}.jpg"/>
+       <img src="https://res.cloudinary.com/stephens-media/image/upload/JUDGING/{{ item.Headshot }}.jpg"/>
      </div>
      <div class="second">
        <div class="court">{{ item.Court }}</div>
-       <a href="#{{ item.Headshot}}"><div class="name">{{ item.jid }}</div></a>
+       <div class="name"><a id="{{ item.Headshot }}" href="#{{ item.Headshot }}">{{ item.jid }}</a></div>
        <div class="bio">{{ item.bio }}</div>
        <div class="retnum">{{ item.retobs }} retention responses for this judge</div>
      </div>
@@ -33,7 +33,8 @@
 
 
    <div class="summarybox">
-    <div class="survey">2019 Survey Questions</div>
+    <div class="survey">2019 Survey Questions <span>Click on <i class="fa fa-plus-square" aria-hidden="true"></i> signs to see full results</span></div>
+    <div class="surveyAll">Show all results <i class="fa fa-caret-down expand" aria-hidden="true"></i><i class="fa fa-caret-up minimize" aria-hidden="true"></i></div>
     <div class="summQuestions">
       <div class="quesA summQuestion">
         <div class="quesA summ"><i class="fa fa-minus-square" aria-hidden="true"></i><i class="fa fa-plus-square" aria-hidden="true"></i> {{ item.a }}</div>
@@ -254,7 +255,7 @@
           <span class="tease3">Retention Recommendation</span>
         </div>
         {% if item.2013pos %}
-          <div class="position">* {{ item.2013pos }}</div>
+          <div class="position">( {{ item.2013pos }} )</div>
         {% else %}
         {% endif %}
       </div>
@@ -264,7 +265,6 @@
    </div> <!--summary box -->
 
     <div class="summaryToggle"><div class="expand taglabel">Expand</div><div class="minimize taglabel">Minimize</div></div>
-
    </div> <!--judge end -->
 {% endfor %}
 

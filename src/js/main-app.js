@@ -14,10 +14,32 @@ $( ".summ" ).click(function() {
 
 
 $( ".summaryToggle" ).click(function() {
+  // var that = $(this);
+  // if( $('.minimize').is(':visible') ){
+  //   // var myID = $(this).parent().attr('id');
+  //   // console.log(myID);
+  //   // scrollToAnchor(myID);
+  //   $(this).parent().find('.topsummary .second .name a')[0].click(function(e){ e.preventDefault(); });
+  //   console.log( $(this).parent().find('.topsummary .second .name a') );
+  // } else {}
+
   $( this ).prev('.summarybox').slideToggle( "slow", function() {});
   $(this).find('.expand').toggle();
   $(this).find('.minimize').toggle();
 });
+
+$( ".surveyAll" ).click(function() {
+  // if ( $(this).next().find('.stats').is(':visible') ){
+  //   $(this).next().find('.stats').hide();
+  // } else { }
+
+  $(this).next().find('.stats').slideToggle( "slow", function() {});
+  $(this).find('.expand').toggle();
+  $(this).find('.minimize').toggle();
+});
+
+
+
 
 $( ".courtFilter" ).click(function() {
   $( this ).next('.courtHolder').slideToggle( "slow", function() {});
