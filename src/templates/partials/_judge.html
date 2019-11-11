@@ -1,15 +1,15 @@
 <div id="judges">
 
 {% for item in DATA %}
-  <div class="judge {{ item.courtID }}">
-   <div class="topsummary" data-score={{ loop.index }} >
+  <div id="{{ item.Headshot }}" class="judge {{ item.courtID }}">
+   <div id="Judge{{ loop.index }}" class="topsummary" data-score={{ loop.index }} >
      <div class="b2top"><a href="#top">Back to top</a></div>
      <div class="first">
        <img src="https://res.cloudinary.com/stephens-media/image/upload/JUDGING/{{ item.Headshot }}.jpg"/>
      </div>
      <div class="second">
        <div class="court">{{ item.Court }}</div>
-       <div class="name"><a id="{{ item.Headshot }}" href="#{{ item.Headshot }}">{{ item.jid }}</a></div>
+       <div class="name"><a href="#Judge{{ loop.index }}">{{ item.jid }}</a></div>
        <div class="bio">{{ item.bio }}</div>
        <div class="retnum">{{ item.retobs }} retention responses for this judge</div>
      </div>

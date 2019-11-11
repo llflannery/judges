@@ -14,14 +14,16 @@ $( ".summ" ).click(function() {
 
 
 $( ".summaryToggle" ).click(function() {
-  // var that = $(this);
-  // if( $('.minimize').is(':visible') ){
-  //   // var myID = $(this).parent().attr('id');
-  //   // console.log(myID);
-  //   // scrollToAnchor(myID);
-  //   $(this).parent().find('.topsummary .second .name a')[0].click(function(e){ e.preventDefault(); });
-  //   console.log( $(this).parent().find('.topsummary .second .name a') );
-  // } else {}
+  if( $('.minimize').is(':visible') ){
+    $(this).parent().find('.surveyAll').removeClass('selected');
+    $(this).parent().find('.summ i.fa-plus-square').show();
+    $(this).parent().find('.summ i.fa-minus-square').hide();
+    $(this).parent().find('.summ').removeClass('selected');
+    $(this).parent().find('.stats').hide();
+
+    $(this).parent().find('.topsummary .second .name a')[0].click(function(e){ e.preventDefault(); });
+    console.log( $(this).parent().find('.topsummary .second .name a') );
+  } else {}
 
   $( this ).prev('.summarybox').slideToggle( "slow", function() {});
   $(this).find('.expand').toggle();
@@ -29,13 +31,26 @@ $( ".summaryToggle" ).click(function() {
 });
 
 $( ".surveyAll" ).click(function() {
-  // if ( $(this).next().find('.stats').is(':visible') ){
-  //   $(this).next().find('.stats').hide();
-  // } else { }
+  if( !$(this).hasClass('selected') ){
+    $(this).addClass('selected');
+    $(this).next().find('i.fa-plus-square').hide();
+    $(this).next().find('i.fa-minus-square').show();
+    $(this).next().find('.summ').addClass('selected');
+    $(this).next().find('.stats').hide();
+
+  } else {
+    $(this).removeClass('selected');
+    $(this).next().find('i.fa-plus-square').show();
+    $(this).next().find('i.fa-minus-square').hide();
+    $(this).next().find('.summ').removeClass('selected');
+    $(this).next().find('.stats').show();
+  }
 
   $(this).next().find('.stats').slideToggle( "slow", function() {});
   $(this).find('.expand').toggle();
   $(this).find('.minimize').toggle();
+
+
 });
 
 
@@ -51,7 +66,7 @@ $( ".courtFilter" ).click(function() {
 
 $(".sort").on("click", "i", function () {
   console.log(this);
-
+ if( !$(this).hasClass('selected') ){
   if ( $(this).parent().attr('id') === "sortRet" ){
 
     if ( $(this).attr('class') === 'fa fa-caret-down' ) {
@@ -72,6 +87,7 @@ $(".sort").on("click", "i", function () {
 
   $('.sort i').removeClass('selected');
   $(this).addClass('selected');
+  } else {}
 });
 
 function sortAsc(sortElement, dataAttr) {
