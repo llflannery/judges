@@ -1078,7 +1078,7 @@
    "judgename": "David Gibson Jr.",
    "Court": "Clark County Family Court",
    "courtID": "ccfamily",
-   "Headshot": "dagibsonjr",
+   "Headshot": "dagibson",
    "2013ret": null,
    "2013pos": "",
    "bio": "A lifelong Henderson resident, Gibson was appointed in 2018 to Clark County Family Court after working for six years as a juvenile dependency hearing master. He is up for reelection in 2020.",
@@ -4046,7 +4046,7 @@
    "discipline": 0
  },
  {
-   "jid": "Arthur Ritchie Jr",
+   "jid": "Arthur Ritchie Jr.",
    "ss": 4.1,
    "ret": 77,
    "retobs": 98,
@@ -4165,14 +4165,14 @@
    "discipline": 0
  },
  {
-   "jid": "David Gibson Sr",
+   "jid": "David Gibson Sr.",
    "ss": 3.9,
    "ret": 77,
    "retobs": 47,
    "judgename": "David Gibson Sr.",
    "Court": "Henderson Justice Court",
    "courtID": "henjustice",
-   "Headshot": "dagibson",
+   "Headshot": "dagibsonjr",
    "2013ret": 85,
    "2013pos": "",
    "bio": "First elected to the Henderson Justice Court in 2008, Gibson is up for reelection in 2020.",
@@ -4284,7 +4284,7 @@
    "discipline": 0
  },
  {
-   "jid": "Joe Hardy Jr",
+   "jid": "Joe Hardy Jr.",
    "ss": 4,
    "ret": 77,
    "retobs": 223,
@@ -6426,7 +6426,7 @@
    "discipline": 0
  },
  {
-   "jid": "Natalie Tyrell",
+   "jid": "Natalie Tyrrell",
    "ss": 3.8,
    "ret": 70,
    "retobs": 54,
@@ -9054,7 +9054,7 @@
    "Headshot": "viochoa",
    "2013ret": 64,
    "2013pos": "",
-   "bio": "First elected to Clark County Family Court in 2014, Ochoa previously practiced family law for 31 years in Las Vegas and Reno. He is up for reelection in 2020.",
+   "bio": "First elected to Clark County Family Court in 2010, Ochoa previously practiced family law for 31 years in Las Vegas and Reno. He is up for reelection in 2020.",
    "a": 2.9,
    "b": 3,
    "c": 3,
